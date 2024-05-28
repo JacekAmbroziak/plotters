@@ -51,8 +51,8 @@ impl Quartiles {
         let median = Quartiles::percentile_of_sorted(&s, 50_f64);
         let upper = Quartiles::percentile_of_sorted(&s, 75_f64);
         let iqr = upper - lower;
-        let lower_fence = (lower - 1.5 * iqr).max(s[0]);
-        let upper_fence = (upper + 1.5 * iqr).min(s[s.len() - 1]);
+        let lower_fence = (lower - 1.5 * iqr).max(s[0].into());
+        let upper_fence = (upper + 1.5 * iqr).min(s[s.len() - 1].into());
         Self {
             lower_fence,
             lower,
